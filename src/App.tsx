@@ -7,6 +7,7 @@ import { Catalog } from './components/Catalog'
 import { ValueProps } from './components/ValueProps'
 import { Footer } from './components/Footer'
 import { SplashScreen } from './components/SplashScreen'
+import { asset } from './lib/asset'
 
 /** Root page composition for Yard Components. */
 function App() {
@@ -30,7 +31,7 @@ function App() {
         aria-hidden
       >
         <img
-          src="/images/bg-pc.jpg"
+          src={asset('/images/bg-pc.jpg')}
           alt=""
           className="h-full w-full object-cover object-[70%_center] opacity-[0.22]"
         />

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { asset } from '../lib/asset'
 
 interface SplashScreenProps {
   /** Called once the splash has fully exited. */
@@ -15,18 +16,19 @@ interface SplashScreenProps {
 export function SplashScreen({ onFinish, durationMs = 2600 }: SplashScreenProps) {
   const [visible, setVisible] = useState(true)
   const [logoReady, setLogoReady] = useState(false)
+  const logoSrc = asset('/images/logo-mark.png')
 
   // Preload logo so the mark appears crisp on first paint.
   useEffect(() => {
     const img = new Image()
-    img.src = '/images/logo-mark.png'
+    img.src = logoSrc
     if (img.complete) {
       setLogoReady(true)
       return
     }
     img.onload = () => setLogoReady(true)
     img.onerror = () => setLogoReady(true)
-  }, [])
+  }, [logoSrc])
 
   useEffect(() => {
     if (!logoReady) return
@@ -57,7 +59,7 @@ export function SplashScreen({ onFinish, durationMs = 2600 }: SplashScreenProps)
         >
           <div className="relative flex flex-col items-center px-6">
             <motion.img
-              src="/images/logo-mark.png"
+              src={logoSrc}
               alt="Yard Components"
               initial={{ opacity: 0, scale: 0.9, y: 14 }}
               animate={

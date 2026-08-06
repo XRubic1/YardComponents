@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import { asset } from '../lib/asset'
 
 /** Hero: brand-led full-bleed composition with soft entrance motion. */
 export function Hero() {
@@ -23,7 +24,7 @@ export function Hero() {
         className="absolute inset-0"
       >
         <motion.img
-          src="/images/bg-pc.jpg"
+          src={asset('/images/bg-pc.jpg')}
           alt=""
           aria-hidden
           fetchPriority="high"

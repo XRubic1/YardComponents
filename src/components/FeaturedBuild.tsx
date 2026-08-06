@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Cpu, HardDrive, MemoryStick, Microchip } from 'lucide-react'
 import { featuredSpecs } from '../data/builds'
+import { asset } from '../lib/asset'
 
 const icons = {
   cpu: Microchip,
@@ -115,7 +116,7 @@ export function FeaturedBuild() {
             aria-hidden
           />
           <img
-            src="/images/catalog/slide-01.jpg"
+            src={asset('/images/catalog/slide-01.jpg')}
             alt="Apex X3D gaming PC with glass panel"
             className="relative z-10 mx-auto w-full max-w-lg object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.8)]"
           />

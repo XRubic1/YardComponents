@@ -1,10 +1,11 @@
 import type { PcBuild } from '../types/build'
+import { asset } from '../lib/asset'
 
 /** Cropped single-PC slides from the studio triptych (one visible per frame). */
 export const pcSlides = [
-  '/images/catalog/slide-01.jpg',
-  '/images/catalog/slide-02.jpg',
-  '/images/catalog/slide-03.jpg',
+  asset('/images/catalog/slide-01.jpg'),
+  asset('/images/catalog/slide-02.jpg'),
+  asset('/images/catalog/slide-03.jpg'),
 ] as const
 
 /** Catalog of Yard Components custom builds. */

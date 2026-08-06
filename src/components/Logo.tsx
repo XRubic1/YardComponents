@@ -1,3 +1,5 @@
+import { asset } from '../lib/asset'
+
 interface LogoProps {
   /** Compact nav size vs. larger brand mark. */
   size?: 'sm' | 'md' | 'lg'
@@ -17,7 +19,7 @@ const sizeMap = {
 export function Logo({ size = 'md', className = '' }: LogoProps) {
   return (
     <img
-      src="/images/logo-mark.png"
+      src={asset('/images/logo-mark.png')}
       alt="Yard Components"
       className={`${sizeMap[size]} object-contain object-left ${className}`}
     />
