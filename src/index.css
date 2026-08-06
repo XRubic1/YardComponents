@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-yc-black: #000000;
+  --color-yc-ink: #0a0a0a;
+  --color-yc-charcoal: #141414;
+  --color-yc-steel: #1c1c1c;
+  --color-yc-border: #2a2a2a;
+  --color-yc-muted: #9da1a4;
+  --color-yc-silver: #c8c8c8;
+  --color-yc-white: #ffffff;
+  --font-display: "Syne", ui-sans-serif, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #000000;
+    color: #ffffff;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .bg-grid-fade {
+    background-image:
+      linear-gradient(to bottom, transparent 40%, #000 100%),
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 100% 100%, 56px 56px, 56px 56px;
+  }
+}
